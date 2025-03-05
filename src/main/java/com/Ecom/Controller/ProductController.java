@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.Ecom.Model.Product;
-import com.Ecom.Model.user;
+import com.Ecom.Model.User;
 import com.Ecom.service.ProductService;
 
 
@@ -70,24 +70,24 @@ public class ProductController {
 //	        return ResponseEntity.ok().contentType(MediaType.valueOf(product.getImageType())).body(imageFile);
 //
 //	    }
-
-	    @PutMapping("/product/{id}")
-	    public ResponseEntity<String> updateProduct(@PathVariable int id, @RequestPart Product product, @RequestPart MultipartFile imageFile) {
-
-	        Product product1 = null;
-	        try {
-	            product1 = service.updateProduct(id, product, imageFile);
-	        } catch (IOException e) {
-	            return new ResponseEntity<>("Failed to update", HttpStatus.BAD_REQUEST);
-	        }
-	        if (product1 != null) {
-	            return new ResponseEntity<>("updated", HttpStatus.OK);
-	        } else {
-	            return new ResponseEntity<>("Failed to update", HttpStatus.BAD_REQUEST);
-	        }
-
-
-	    }
+//
+//	    @PutMapping("/product/{id}")
+//	    public ResponseEntity<String> updateProduct(@PathVariable int id, @RequestPart Product product, @RequestPart MultipartFile imageFile) {
+//
+//	        Product product1 = null;
+//	        try {
+//	            product1 = service.updateProduct(id, product, imageFile);
+//	        } catch (IOException e) {
+//	            return new ResponseEntity<>("Failed to update", HttpStatus.BAD_REQUEST);
+//	        }
+//	        if (product1 != null) {
+//	            return new ResponseEntity<>("updated", HttpStatus.OK);
+//	        } else {
+//	            return new ResponseEntity<>("Failed to update", HttpStatus.BAD_REQUEST);
+//	        }
+//
+//
+//	    }
 
 
 	    @DeleteMapping("/product/{id}")
